@@ -50,7 +50,7 @@ const courses = [
 const Course = () => {
   return (
     <>
-      {/* <Header dataCourse={courses} /> */}
+      <Header dataCourse={courses} />
       <Content dataCourse={courses} />
     </>
   );

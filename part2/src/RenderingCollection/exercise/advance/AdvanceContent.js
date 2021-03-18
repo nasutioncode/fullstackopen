@@ -1,25 +1,24 @@
 import React from "react";
+import AdvancedTotal from "./AdvancedTotal";
+import AdvancedParts from "./AdvancedParts";
 
 const Content = ({ dataCourse }) => {
-  // const total = dataCourse.reduce((jum, v) => {
-  //   console.log(v);
-  //   jum = dataCourse.parts.reduce((jum, v) => (jum = jum + v.exercises), 0);
-  //   return jum;
-  // });
-
   return (
     <>
       {dataCourse.map((kursus) =>
         kursus.parts.map((anak) => (
           <>
-            <p key={kursus.id}>
+            {/* <p key={kursus.id}>
               {anak.name} {anak.exercises}
-            </p>
+            </p> */}
 
-            <p>
-              total :
-              {kursus.parts.reduce((jum, v) => (jum = jum + v.exercises), 0)}
-            </p>
+            <AdvancedParts
+              keyInfo={kursus.id}
+              courseInfoName={anak.name}
+              courseInfoTotal={anak.exercises}
+            />
+
+            {/* <AdvancedTotal course={kursus} /> */}
           </>
         ))
       )}
