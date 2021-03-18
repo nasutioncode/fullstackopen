@@ -1,24 +1,20 @@
 import React from "react";
+import Part from "./Part";
+import Total from "./Total";
 
 const Content = ({ course }) => {
-  const total = course.parts.reduce((jum, v) => {
-    // console.log(v);
-    jum = course.parts.reduce((jum, v) => (jum = jum + v.exercises), 0);
-    return jum;
-  });
-
   return (
     <>
       {course.parts.map((kursus) => (
         <>
-          <p key={kursus.id}>
-            {kursus.name} {kursus.exercises}
-          </p>
-
-          {/* {console.log(kursus.reduce((a, v) => (a = a + v.exercises), 0))} */}
+          <Part
+            courseInfoName={kursus.name}
+            courseInfoTotal={kursus.exercises}
+            keyInfo={kursus.id}
+          />
         </>
       ))}
-      <p>total : {total}</p>
+      <Total course={course} />
     </>
   );
 };
