@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   const [countries, setCountries] = useState([]);
   const [value, setValue] = useState("");
-  const [showMore, setShowMore] = useState("");
+  const [showMore, setShowMore] = useState([]);
 
   // console.log("ini index country", countries[1]);
 
@@ -21,11 +21,14 @@ function App() {
   const handleButtonMore = (event) => {
     const data = event.target.dataset.mssg;
     let nomorIndex = parseInt(data);
-    // console.log("index data..", nomorIndex);
 
-    // setShowMore(countries[nomorIndex]);
+    const population = countries[nomorIndex].population;
 
-    // console.log("ini negara index", countries[nomorIndex]);
+    setShowMore(population);
+
+    console.log("bahasa var", [population]);
+
+    <div></div>;
 
     alert(
       countries[nomorIndex].name +
@@ -34,7 +37,8 @@ function App() {
         " " +
         countries[nomorIndex].population +
         " " +
-        countries[nomorIndex].translations.ja
+        countries[nomorIndex].translations.ja +
+        " "
     );
   };
 
@@ -89,15 +93,20 @@ function App() {
                   ))}
                 </div>
 
-                <p>Populasi : {country.population}</p>
+                {/* <p>Populasi : {country.population}</p> */}
                 <p>Ibu kota : {country.capital}</p>
 
                 <button onClick={handleButtonMore} data-mssg={index}>
-                  Show More {country.callingCodes}
+                  Show More
+                  {/* {country.callingCodes} */}
                 </button>
+
+                {/* <p>{showMore}</p> */}
+                {/* {console.log("setShowMore", setShowMore)} */}
               </div>
             </>
           ))}
+        <p>{showMore}</p>
       </div>
     </div>
   );
