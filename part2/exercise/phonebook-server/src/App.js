@@ -5,8 +5,6 @@ function App() {
   const [persons, setPersons] = useState([]);
 
   const getData = () => {
-    console.log("data");
-
     axios.get("http://localhost:3001/persons").then((response) => {
       const dataPerson = response.data;
       console.log(dataPerson);
