@@ -3,11 +3,36 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
+  const [weathers, setWeathers] = useState([]);
   const [countries, setCountries] = useState([]);
   const [value, setValue] = useState("");
   const [showMore, setShowMore] = useState([]);
 
-  // console.log("ini index country", countries[1]);
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  const API_URL = "http://api.weatherstack.com/current";
+
+  // console.log("ini api key", process.env.REACT_APP_WEATHER_API_KEY);
+
+  const getDataWeather = (msg) => {
+    axios
+      .get(API_URL, {
+        params: {
+          access_key: API_KEY,
+          query: "Jakarta",
+        },
+      })
+      .then((response) => {
+        const data = response.data;
+        setWeathers(data);
+      });
+
+    console.log("pesan", msg);
+    return <h1>{msg}</h1>;
+  };
+
+  // console.log("cuaca ambil", weathers.location.country);
+
+  useEffect(getDataWeather, []);
 
   const getData = () => {
     axios.get("https://restcountries.eu/rest/v2/all").then((response) => {
@@ -17,6 +42,10 @@ function App() {
   };
 
   useEffect(getData, []);
+
+  // console.log("ini data country", countries);
+
+  console.log("ini data weather", weathers);
 
   const handleButtonMore = (event) => {
     const data = event.target.dataset.mssg;
@@ -28,17 +57,22 @@ function App() {
 
     console.log("bahasa var", [population]);
 
-    <div></div>;
-
     alert(
-      countries[nomorIndex].name +
-        " " +
+      "INFO NEGARA : " +
+        "\n" +
+        countries[nomorIndex].name +
+        "\n" +
         countries[nomorIndex].capital +
-        " " +
+        "\n" +
         countries[nomorIndex].population +
-        " " +
+        "\n" +
         countries[nomorIndex].translations.ja +
-        " "
+        "\n" +
+        "\n" +
+        "CUACA : " +
+        "\n" +
+        "Temperatur :" +
+        weathers.current.temperature
     );
   };
 
@@ -47,8 +81,6 @@ function App() {
       <div className="header">
         <div className="header-titel">
           <h1>Countries Data {countries.length}</h1>
-          {/* <p>ini show more : {setShowMore}</p>
-          {console.log("showmore", setShowMore)} */}
         </div>
 
         <div className="header-search">
@@ -94,7 +126,7 @@ function App() {
                 </div>
 
                 {/* <p>Populasi : {country.population}</p> */}
-                <p>Ibu kota : {country.capital}</p>
+                <p msg={country.capital}>Ibu kota : {country.capital}</p>
 
                 <button onClick={handleButtonMore} data-mssg={index}>
                   Show More
@@ -103,10 +135,17 @@ function App() {
 
                 {/* <p>{showMore}</p> */}
                 {/* {console.log("setShowMore", setShowMore)} */}
+
+                {/* <getDataWeather msg={country.capital} /> */}
               </div>
             </>
           ))}
-        <p>{showMore}</p>
+
+        {/* <div className="cuaca">
+          <h4>Temperature : {weathers.current.temperature}</h4>
+          <img src={weathers.current.weather_icons} />
+          <h4>Wind : {weathers.current.wind_speed}</h4>
+        </div> */}
       </div>
     </div>
   );

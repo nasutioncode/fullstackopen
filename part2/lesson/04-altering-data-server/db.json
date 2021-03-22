@@ -1,0 +1,88 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "HTML is easy",
+      "date": "2019-05-30T17:30:31.098Z",
+      "important": false
+    },
+    {
+      "id": 2,
+      "content": "Browser can execute only JavaScript",
+      "date": "2019-05-30T18:39:34.091Z",
+      "important": true
+    },
+    {
+      "id": 3,
+      "content": "GET and POST are the most important methods of HTTP protocol",
+      "date": "2019-05-30T19:20:14.298Z",
+      "important": false
+    },
+    {
+      "id": 4,
+      "content": "nasution cape",
+      "date": "2021-03-20T02:42:51.404Z",
+      "important": false
+    },
+    {
+      "id": 5,
+      "content": "nasutin",
+      "date": "2021-03-20T03:02:35.676Z",
+      "important": false
+    },
+    {
+      "id": 6,
+      "content": "akhirrrnyaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "date": "2021-03-20T03:05:24.870Z",
+      "important": false
+    },
+    {
+      "id": 7,
+      "content": "CAAAPPPEEE",
+      "date": "2021-03-20T03:06:28.457Z",
+      "important": true
+    },
+    {
+      "id": 8,
+      "content": "makan",
+      "date": "2021-03-21T23:56:47.002Z",
+      "important": false
+    },
+    {
+      "id": 9,
+      "content": "woe",
+      "date": "2021-03-22T00:07:09.055Z",
+      "important": false
+    },
+    {
+      "id": 10,
+      "content": "coba",
+      "date": "2021-03-22T00:08:47.771Z",
+      "important": false
+    },
+    {
+      "id": 11,
+      "content": "s",
+      "date": "2021-03-22T00:10:16.405Z",
+      "important": true
+    },
+    {
+      "id": 12,
+      "content": "hahaah cape sebenarnya",
+      "date": "2021-03-22T00:10:21.850Z",
+      "important": false
+    },
+    {
+      "id": 13,
+      "content": "kenapa",
+      "date": "2021-03-22T00:15:32.577Z",
+      "important": true
+    },
+    {
+      "id": 14,
+      "content": "mamam ",
+      "date": "2021-03-22T00:36:09.865Z",
+      "important": true
+    }
+  ]
+}
